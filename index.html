@@ -1,1 +1,121 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="SkillSprint AI — your personal career readiness lab.">
+  <title>SkillSprint AI — Career Readiness Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">S</span><span>SkillSprint<span class="brand-ai">.AI</span></span></a>
+      <p class="side-label">WORKSPACE</p>
+      <nav class="nav">
+        <button class="nav-item active" data-view="overview">◫ Overview</button>
+        <button class="nav-item" data-view="assessment">◎ Skill assessment</button>
+        <button class="nav-item" data-view="roadmap">⌁ 7-day sprint</button>
+        <button class="nav-item" data-view="portfolio">▧ Portfolio builder</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-card"><strong>Small steps. Big growth.</strong><p>Your next opportunity starts here.</p></div>
+        <p class="side-foot">FREE CAREER LAB · V1.0</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><p class="eyebrow">YOUR CAREER, IN MOTION</p><h1 id="page-title">Overview</h1></div>
+        <div class="top-actions"><span class="status-dot"></span><span class="saved-label">Saved on this device</span><button class="avatar" id="profile-shortcut">A</button></div>
+      </header>
+
+      <section class="view active" id="view-overview">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="pill">✦ YOUR PERSONAL CAREER LAB</span>
+            <h2>Build skills.<br><span>Become undeniable.</span></h2>
+            <p>Turn your career goal into a clear plan, test what you know, and make progress one focused day at a time.</p>
+            <button class="btn btn-primary" data-go="assessment">Start skill check →</button>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="orb orb-one"></div><div class="orb orb-two"></div>
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="core"><span>✦</span><small>GROWTH<br>MODE</small></div>
+            <div class="float-chip chip-top">↗ Learn</div><div class="float-chip chip-bottom">✓ Build</div>
+          </div>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow">YOUR SNAPSHOT</p><h2>Progress at a glance</h2></div><button class="text-btn" data-go="roadmap">View sprint →</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><p>Readiness score</p><div class="stat-number"><span id="readiness-score">0</span><small>/100</small></div><div class="meter"><span id="readiness-meter"></span></div><small id="readiness-note">Take the assessment to get your score.</small></article>
+          <article class="stat-card"><p>Sprint tasks done</p><div class="stat-number"><span id="tasks-done">0</span><small>/7</small></div><div class="meter"><span id="tasks-meter"></span></div><small>Consistency beats intensity.</small></article>
+          <article class="stat-card"><p>Portfolio projects</p><div class="stat-number"><span id="project-count">0</span><small> added</small></div><div class="meter"><span id="projects-meter"></span></div><small>Show what you can build.</small></article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel profile-panel">
+            <div class="panel-heading"><div><p class="eyebrow">PERSONALIZE YOUR PLAN</p><h3>Your career target</h3></div></div>
+            <form id="profile-form" class="profile-form">
+              <label for="user-name">Your name</label><input id="user-name" maxlength="50" placeholder="Enter your name">
+              <label for="career-goal">Target role</label>
+              <select id="career-goal"><option>AI Engineer</option><option>Data Analyst</option><option>Data Scientist</option><option>Web Developer</option><option>Software Engineer</option></select>
+              <label for="level">Current level</label><select id="level"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select>
+              <button class="btn btn-primary" type="submit">Save my target</button><p id="profile-feedback" class="feedback"></p>
+            </form>
+          </article>
+          <article class="panel focus-panel">
+            <div class="panel-heading"><div><p class="eyebrow">NEXT BEST ACTION</p><h3>Make today count</h3></div></div>
+            <div class="focus-callout"><span class="focus-number">01</span><div><strong id="focus-title">Take your skill assessment</strong><p id="focus-description">Discover your strengths and choose your next learning step.</p></div></div>
+            <button class="btn btn-secondary" id="focus-action">Let's go →</button><div class="quote-line">“Progress is proof you showed up.”</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="view-assessment">
+        <div class="intro-row"><div><p class="eyebrow">KNOW YOUR BASELINE</p><h2>Skill assessment</h2><p class="intro-copy">Answer 8 quick questions. Your score is a learning baseline, not a hiring prediction.</p></div><div class="assessment-badge">⏱ 3–5 MIN</div></div>
+        <div class="panel quiz-panel">
+          <div class="quiz-top"><span id="question-count">QUESTION 1 OF 8</span><span id="quiz-progress-label">12% complete</span></div>
+          <div class="meter quiz-meter"><span id="quiz-progress"></span></div>
+          <div id="quiz-content"></div>
+          <div class="quiz-controls"><button class="btn btn-secondary" id="quiz-back" disabled>← Back</button><button class="btn btn-primary" id="quiz-next">Next question →</button></div>
+          <div id="quiz-result" class="quiz-result hidden"></div>
+        </div>
+        <p class="tiny-note">No account or API key needed. Answers are saved locally in your browser.</p>
+      </section>
+
+      <section class="view" id="view-roadmap">
+        <div class="intro-row"><div><p class="eyebrow">7 DAYS OF MOMENTUM</p><h2>Your focused sprint</h2><p class="intro-copy">A practical starter plan for your chosen career path. Check off each task as you finish it.</p></div><div class="completion-ring" id="completion-ring"><span id="completion-percent">0%</span></div></div>
+        <div class="sprint-banner"><div><span class="pill">THIS WEEK'S MISSION</span><h3 id="sprint-heading">Build your foundations</h3><p id="sprint-subheading">Seven small actions. One stronger portfolio.</p></div><div class="banner-icon">⌁</div></div>
+        <div id="task-list" class="task-list"></div>
+        <div class="panel sprint-tip"><strong>✦ Make it stick</strong><p>After each task, write one sentence about what you learned. Tiny reflections help you remember and give you interview stories.</p></div>
+      </section>
+
+      <section class="view" id="view-portfolio">
+        <div class="intro-row"><div><p class="eyebrow">SHOW, DON'T JUST TELL</p><h2>Portfolio builder</h2><p class="intro-copy">Collect your projects into a clean, downloadable portfolio summary.</p></div><button class="btn btn-primary" id="download-portfolio">↓ Export portfolio</button></div>
+        <div class="portfolio-layout">
+          <div class="panel project-form-panel">
+            <div class="panel-heading"><div><p class="eyebrow">ADD A BUILD</p><h3>Project details</h3></div></div>
+            <form id="project-form" class="profile-form">
+              <label for="project-name">Project name *</label><input id="project-name" maxlength="80" required placeholder="e.g. Smart Transportation System">
+              <label for="project-type">Category</label><select id="project-type"><option>AI / Machine Learning</option><option>Web Development</option><option>Data Analytics</option><option>Embedded Systems</option><option>Other</option></select>
+              <label for="project-desc">What does it do? *</label><textarea id="project-desc" maxlength="500" required rows="4" placeholder="Problem, solution, and what you learned..."></textarea>
+              <label for="project-tech">Tools / technologies</label><input id="project-tech" maxlength="160" placeholder="Python, HTML, JavaScript">
+              <label for="project-link">Live demo or GitHub link (optional)</label><input id="project-link" type="url" placeholder="https://...">
+              <button class="btn btn-primary" type="submit">Add to portfolio +</button><p id="project-feedback" class="feedback"></p>
+            </form>
+          </div>
+          <div><div class="portfolio-list-heading"><h3>Your projects</h3><span id="portfolio-count" class="count-chip">0 PROJECTS</span></div><div id="project-list" class="project-list"></div></div>
+        </div>
+      </section>
+
+      <footer><span>SkillSprint<span class="brand-ai">.AI</span></span><span>Made for learners who keep showing up.</span><button id="reset-app" class="reset-btn">Reset demo data</button></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
