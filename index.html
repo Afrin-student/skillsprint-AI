@@ -4,118 +4,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="SkillSprint AI — your personal career readiness lab.">
-  <title>SkillSprint AI — Career Readiness Lab</title>
+  <meta name="theme-color" content="#100d20">
+  <meta name="description" content="SkillSprint AI — your personal career growth workspace.">
+  <title>SkillSprint AI | Career Growth</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-shell">
-    <aside class="sidebar">
-      <a class="brand" href="#"><span class="brand-mark">S</span><span>SkillSprint<span class="brand-ai">.AI</span></span></a>
-      <p class="side-label">WORKSPACE</p>
-      <nav class="nav">
-        <button class="nav-item active" data-view="overview">◫ Overview</button>
-        <button class="nav-item" data-view="assessment">◎ Skill assessment</button>
-        <button class="nav-item" data-view="roadmap">⌁ 7-day sprint</button>
-        <button class="nav-item" data-view="portfolio">▧ Portfolio builder</button>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="SkillSprint AI home">
+        <span class="brand-icon">S</span>
+        <span>SkillSprint <span class="brand-ai">AI</span></span>
+      </a>
+
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="nav-menu" aria-label="Main navigation">
+        <button class="nav-link active" data-page="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-link" data-page="career"><span>✦</span> Career Roadmap</button>
+        <button class="nav-link" data-page="coach"><span>◈</span> AI Career Coach <span class="nav-tag">AI</span></button>
+        <button class="nav-link" data-page="resume"><span>▤</span> Resume Analyzer</button>
+        <button class="nav-link" data-page="interview"><span>◎</span> Interview Lab</button>
+        <button class="nav-link" data-page="projects"><span>⌘</span> My Projects</button>
       </nav>
+
       <div class="sidebar-bottom">
-        <div class="mini-card"><strong>Small steps. Big growth.</strong><p>Your next opportunity starts here.</p></div>
-        <p class="side-foot">FREE CAREER LAB · V1.0</p>
+        <div class="upgrade-card">
+          <span class="upgrade-icon">✧</span>
+          <h3>Your next chapter starts here.</h3>
+          <p>Small steps. Strong skills. Better opportunities.</p>
+          <button class="text-button" data-page="career">View my roadmap →</button>
+        </div>
+        <div class="profile-mini">
+          <div class="avatar">A</div>
+          <div><strong id="profileName">My Workspace</strong><small>Career Explorer</small></div>
+          <span class="profile-dot"></span>
+        </div>
       </div>
     </aside>
 
-    <main class="main">
+    <main class="main-content">
       <header class="topbar">
-        <div><p class="eyebrow">YOUR CAREER, IN MOTION</p><h1 id="page-title">Overview</h1></div>
-        <div class="top-actions"><span class="status-dot"></span><span class="saved-label">Saved on this device</span><button class="avatar" id="profile-shortcut">A</button></div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="pageBreadcrumb">Dashboard</strong></div>
+        <div class="topbar-actions">
+          <span class="status-pill"><span class="status-dot"></span> Your growth space</span>
+          <button class="icon-button" id="themeButton" title="Toggle theme" aria-label="Toggle theme">☼</button>
+        </div>
       </header>
 
-      <section class="view active" id="view-overview">
-        <div class="hero">
+      <section class="page active" id="page-dashboard">
+        <div class="welcome-row">
+          <div>
+            <p class="eyebrow">YOUR PERSONAL CAREER WORKSPACE</p>
+            <h1>Build your future, <span class="gradient-text">one skill at a time.</span></h1>
+            <p class="subtitle">Learn, practise and track your progress — all in one place.</p>
+          </div>
+          <button class="primary-button" data-page="career">Explore my roadmap <span>↗</span></button>
+        </div>
+
+        <div class="hero-banner">
           <div class="hero-copy">
-            <span class="pill">✦ YOUR PERSONAL CAREER LAB</span>
-            <h2>Build skills.<br><span>Become undeniable.</span></h2>
-            <p>Turn your career goal into a clear plan, test what you know, and make progress one focused day at a time.</p>
-            <button class="btn btn-primary" data-go="assessment">Start skill check →</button>
+            <span class="hero-label">✦ YOUR NEXT LEVEL STARTS NOW</span>
+            <h2>Progress beats perfection.</h2>
+            <p>Choose a goal, show up consistently, and let your skills grow.</p>
+            <button class="light-button" data-page="interview">Start practising <span>→</span></button>
           </div>
-          <div class="hero-visual" aria-hidden="true">
-            <div class="orb orb-one"></div><div class="orb orb-two"></div>
-            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-            <div class="core"><span>✦</span><small>GROWTH<br>MODE</small></div>
-            <div class="float-chip chip-top">↗ Learn</div><div class="float-chip chip-bottom">✓ Build</div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit-center">✦</div>
+            <div class="orbit-chip chip-one">LEARN</div>
+            <div class="orbit-chip chip-two">GROW</div>
+            <div class="orbit-chip chip-three">BUILD</div>
           </div>
         </div>
 
-        <div class="section-heading"><div><p class="eyebrow">YOUR SNAPSHOT</p><h2>Progress at a glance</h2></div><button class="text-btn" data-go="roadmap">View sprint →</button></div>
+        <div class="section-heading">
+          <div><h2>Your progress at a glance</h2><p>Every completed task moves you forward.</p></div>
+        </div>
+
         <div class="stats-grid">
-          <article class="stat-card"><p>Readiness score</p><div class="stat-number"><span id="readiness-score">0</span><small>/100</small></div><div class="meter"><span id="readiness-meter"></span></div><small id="readiness-note">Take the assessment to get your score.</small></article>
-          <article class="stat-card"><p>Sprint tasks done</p><div class="stat-number"><span id="tasks-done">0</span><small>/7</small></div><div class="meter"><span id="tasks-meter"></span></div><small>Consistency beats intensity.</small></article>
-          <article class="stat-card"><p>Portfolio projects</p><div class="stat-number"><span id="project-count">0</span><small> added</small></div><div class="meter"><span id="projects-meter"></span></div><small>Show what you can build.</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Weekly progress</span><span class="stat-icon purple">↗</span></div><div class="stat-value" id="weeklyProgress">0%</div><div class="progress-track"><div id="weeklyBar" class="progress-fill purple-fill"></div></div><small>Based on your sprint tasks</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Tasks completed</span><span class="stat-icon pink">✓</span></div><div class="stat-value" id="tasksCompleted">0 <span class="stat-unit">/ 7</span></div><div class="stat-note">Keep your momentum going.</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Projects created</span><span class="stat-icon blue">⌘</span></div><div class="stat-value" id="projectCount">0</div><div class="stat-note">Turn your learning into proof.</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Current goal</span><span class="stat-icon gold">✧</span></div><div class="goal-value" id="goalDisplay">AI Engineer</div><button class="inline-link" data-page="career">Manage career goal →</button></article>
         </div>
 
-        <div class="content-grid">
-          <article class="panel profile-panel">
-            <div class="panel-heading"><div><p class="eyebrow">PERSONALIZE YOUR PLAN</p><h3>Your career target</h3></div></div>
-            <form id="profile-form" class="profile-form">
-              <label for="user-name">Your name</label><input id="user-name" maxlength="50" placeholder="Enter your name">
-              <label for="career-goal">Target role</label>
-              <select id="career-goal"><option>AI Engineer</option><option>Data Analyst</option><option>Data Scientist</option><option>Web Developer</option><option>Software Engineer</option></select>
-              <label for="level">Current level</label><select id="level"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select>
-              <button class="btn btn-primary" type="submit">Save my target</button><p id="profile-feedback" class="feedback"></p>
-            </form>
-          </article>
-          <article class="panel focus-panel">
-            <div class="panel-heading"><div><p class="eyebrow">NEXT BEST ACTION</p><h3>Make today count</h3></div></div>
-            <div class="focus-callout"><span class="focus-number">01</span><div><strong id="focus-title">Take your skill assessment</strong><p id="focus-description">Discover your strengths and choose your next learning step.</p></div></div>
-            <button class="btn btn-secondary" id="focus-action">Let's go →</button><div class="quote-line">“Progress is proof you showed up.”</div>
-          </article>
+        <div class="dashboard-grid">
+          <section class="panel">
+            <div class="panel-heading"><div><h2>Your 7-day sprint</h2><p>A small daily action makes a big difference.</p></div><button class="inline-link" data-page="career">View all →</button></div>
+            <div id="dashboardTasks" class="task-list"></div>
+          </section>
+          <section class="panel">
+            <div class="panel-heading"><div><h2>Quick launch</h2><p>What would you like to work on?</p></div></div>
+            <div class="quick-grid">
+              <button class="quick-action" data-page="coach"><span class="quick-icon purple">✦</span><strong>Ask AI Coach</strong><small>Explore your next step</small><span class="quick-arrow">↗</span></button>
+              <button class="quick-action" data-page="resume"><span class="quick-icon pink">▤</span><strong>Check my resume</strong><small>Review your strengths</small><span class="quick-arrow">↗</span></button>
+              <button class="quick-action" data-page="interview"><span class="quick-icon blue">◎</span><strong>Practise interviews</strong><small>Build confidence</small><span class="quick-arrow">↗</span></button>
+              <button class="quick-action" data-page="projects"><span class="quick-icon gold">⌘</span><strong>Build a project</strong><small>Show what you know</small><span class="quick-arrow">↗</span></button>
+            </div>
+          </section>
         </div>
       </section>
 
-      <section class="view" id="view-assessment">
-        <div class="intro-row"><div><p class="eyebrow">KNOW YOUR BASELINE</p><h2>Skill assessment</h2><p class="intro-copy">Answer 8 quick questions. Your score is a learning baseline, not a hiring prediction.</p></div><div class="assessment-badge">⏱ 3–5 MIN</div></div>
-        <div class="panel quiz-panel">
-          <div class="quiz-top"><span id="question-count">QUESTION 1 OF 8</span><span id="quiz-progress-label">12% complete</span></div>
-          <div class="meter quiz-meter"><span id="quiz-progress"></span></div>
-          <div id="quiz-content"></div>
-          <div class="quiz-controls"><button class="btn btn-secondary" id="quiz-back" disabled>← Back</button><button class="btn btn-primary" id="quiz-next">Next question →</button></div>
-          <div id="quiz-result" class="quiz-result hidden"></div>
-        </div>
-        <p class="tiny-note">No account or API key needed. Answers are saved locally in your browser.</p>
+      <section class="page" id="page-career">
+        <div class="page-intro"><p class="eyebrow">PLAN WITH PURPOSE</p><h1>Your career <span class="gradient-text">roadmap.</span></h1><p class="subtitle">Choose a direction and turn it into manageable steps.</p></div>
+        <div class="panel goal-panel"><div><h2>Choose your target role</h2><p>Your roadmap will adapt to your selection.</p></div><select id="careerGoal" class="form-control"><option>AI Engineer</option><option>Data Analyst</option><option>Data Scientist</option><option>Software Developer</option><option>Machine Learning Engineer</option></select><button id="saveGoal" class="primary-button">Save my goal</button></div>
+        <div class="section-heading"><div><h2>Your learning roadmap</h2><p>Work through these foundations at your own pace.</p></div></div>
+        <div id="roadmapList" class="roadmap-list"></div>
+        <div class="panel sprint-panel"><div class="panel-heading"><div><h2>7-day action plan</h2><p>Tick a task when you finish it.</p></div><span class="status-pill" id="sprintBadge">0 of 7 complete</span></div><div id="allTasks" class="task-list"></div></div>
       </section>
 
-      <section class="view" id="view-roadmap">
-        <div class="intro-row"><div><p class="eyebrow">7 DAYS OF MOMENTUM</p><h2>Your focused sprint</h2><p class="intro-copy">A practical starter plan for your chosen career path. Check off each task as you finish it.</p></div><div class="completion-ring" id="completion-ring"><span id="completion-percent">0%</span></div></div>
-        <div class="sprint-banner"><div><span class="pill">THIS WEEK'S MISSION</span><h3 id="sprint-heading">Build your foundations</h3><p id="sprint-subheading">Seven small actions. One stronger portfolio.</p></div><div class="banner-icon">⌁</div></div>
-        <div id="task-list" class="task-list"></div>
-        <div class="panel sprint-tip"><strong>✦ Make it stick</strong><p>After each task, write one sentence about what you learned. Tiny reflections help you remember and give you interview stories.</p></div>
-      </section>
-
-      <section class="view" id="view-portfolio">
-        <div class="intro-row"><div><p class="eyebrow">SHOW, DON'T JUST TELL</p><h2>Portfolio builder</h2><p class="intro-copy">Collect your projects into a clean, downloadable portfolio summary.</p></div><button class="btn btn-primary" id="download-portfolio">↓ Export portfolio</button></div>
-        <div class="portfolio-layout">
-          <div class="panel project-form-panel">
-            <div class="panel-heading"><div><p class="eyebrow">ADD A BUILD</p><h3>Project details</h3></div></div>
-            <form id="project-form" class="profile-form">
-              <label for="project-name">Project name *</label><input id="project-name" maxlength="80" required placeholder="e.g. Smart Transportation System">
-              <label for="project-type">Category</label><select id="project-type"><option>AI / Machine Learning</option><option>Web Development</option><option>Data Analytics</option><option>Embedded Systems</option><option>Other</option></select>
-              <label for="project-desc">What does it do? *</label><textarea id="project-desc" maxlength="500" required rows="4" placeholder="Problem, solution, and what you learned..."></textarea>
-              <label for="project-tech">Tools / technologies</label><input id="project-tech" maxlength="160" placeholder="Python, HTML, JavaScript">
-              <label for="project-link">Live demo or GitHub link (optional)</label><input id="project-link" type="url" placeholder="https://...">
-              <button class="btn btn-primary" type="submit">Add to portfolio +</button><p id="project-feedback" class="feedback"></p>
-            </form>
+      <section class="page" id="page-coach">
+        <div class="page-intro"><p class="eyebrow">YOUR LEARNING COMPANION</p><h1>AI Career <span class="gradient-text">Coach.</span></h1><p class="subtitle">Ask questions about careers, skills, projects and interview preparation.</p></div>
+        <div class="coach-layout">
+          <div class="panel chat-panel">
+            <div class="chat-header"><div class="coach-avatar">✦</div><div><strong>SkillSprint Coach</strong><small><span class="status-dot"></span> Career assistant</small></div><span class="chat-mode">Preview mode</span></div>
+            <div id="chatMessages" class="chat-messages" aria-live="polite"><div class="message assistant-message"><div class="message-avatar">✦</div><div class="message-bubble"><strong>Hey there! 👋</strong><p>I'm your career learning companion. Ask me about AI, projects, resumes or interview preparation.</p><small>Starter assistant · Not connected to a live AI model yet</small></div></div></div>
+            <div class="suggestion-row"><button class="suggestion" data-prompt="Make me a beginner-friendly AI Engineer learning plan.">AI learning plan</button><button class="suggestion" data-prompt="Give me three beginner AI project ideas.">Project ideas</button><button class="suggestion" data-prompt="Help me prepare for an HR interview.">HR interview</button></div>
+            <form id="chatForm" class="chat-input-row"><textarea id="chatInput" rows="1" placeholder="Ask about your career goals..." aria-label="Message to career coach" required></textarea><button class="send-button" type="submit" aria-label="Send message">➤</button></form>
+            <p class="privacy-note">Don't enter passwords, private documents or sensitive personal information.</p>
           </div>
-          <div><div class="portfolio-list-heading"><h3>Your projects</h3><span id="portfolio-count" class="count-chip">0 PROJECTS</span></div><div id="project-list" class="project-list"></div></div>
+          <aside class="panel coach-tips"><h3>Try asking</h3><button data-prompt="What skills should I learn first to become an AI Engineer?">What skills should I learn first?</button><button data-prompt="Explain machine learning in simple words with an example.">Explain machine learning simply</button><button data-prompt="How can I improve my resume as a fresher?">How do I improve my resume?</button><button data-prompt="Give me a 30-day coding practice plan.">Create a coding practice plan</button><div class="tip-note"><span>✦</span><div><strong>Keep it practical</strong><p>Ask for small steps, examples and exercises you can try today.</p></div></div></aside>
         </div>
       </section>
 
-      <footer><span>SkillSprint<span class="brand-ai">.AI</span></span><span>Made for learners who keep showing up.</span><button id="reset-app" class="reset-btn">Reset demo data</button></footer>
+      <section class="page" id="page-resume">
+        <div class="page-intro"><p class="eyebrow">MAKE YOUR EXPERIENCE COUNT</p><h1>Resume <span class="gradient-text">Analyzer.</span></h1><p class="subtitle">Review your resume text for useful keywords and common sections.</p></div>
+        <div class="resume-layout">
+          <div class="panel">
+            <div class="panel-heading"><div><h2>Review your resume</h2><p>Paste the resume text below to start.</p></div><span class="stat-icon pink">▤</span></div>
+            <label class="field-label" for="resumeFile">Or select a text file (.txt)</label><input class="form-control file-input" type="file" id="resumeFile" accept=".txt,text/plain">
+            <label class="field-label" for="resumeText">Resume content</label><textarea id="resumeText" class="form-control resume-textarea" placeholder="Paste your resume here: summary, skills, education, projects, internships..." rows="12"></textarea>
+            <div class="resume-actions"><button id="analyzeResume" class="primary-button">Analyze resume ✦</button><button id="clearResume" class="secondary-button">Clear</button></div>
+            <p class="privacy-note">This starter analyzer processes text in your browser. It does not send your resume to a server.</p>
+          </div>
+          <div class="panel results-panel"><div class="panel-heading"><div><h2>Analysis report</h2><p>A helpful starting point, not a hiring guarantee.</p></div></div><div id="resumeEmpty" class="empty-state"><div class="empty-icon">▤</div><strong>Your report will appear here</strong><p>Run an analysis to see detected skills and suggested improvements.</p></div><div id="resumeResults" hidden></div></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-interview">
+        <div class="page-intro"><p class="eyebrow">PRACTICE MAKES PROGRESS</p><h1>Interview <span class="gradient-text">Lab.</span></h1><p class="subtitle">Practise common questions and build answers in your own words.</p></div>
+        <div class="panel interview-setup"><div><h2>Choose a practice round</h2><p>Start with a question, then write your answer for self-review.</p></div><select id="interviewType" class="form-control"><option value="hr">HR & communication</option><option value="technical">Technical basics</option><option value="project">Project explanation</option></select><button id="startInterview" class="primary-button">Start practice →</button></div>
+        <div class="interview-layout">
+          <div class="panel interview-question-panel"><div class="question-meta"><span class="status-pill" id="questionCounter">Ready when you are</span><span class="eyebrow">PRACTICE QUESTION</span></div><h2 id="interviewQuestion">Tell me about yourself.</h2><p id="interviewHint">Keep your introduction clear: education, strengths and career goal.</p><label for="interviewAnswer" class="field-label">Your answer</label><textarea id="interviewAnswer" class="form-control" rows="7" placeholder="Write your answer here..."></textarea><div class="interview-actions"><button id="checkAnswer" class="primary-button">Review my answer</button><button id="nextQuestion" class="secondary-button">Next question →</button></div><div id="answerFeedback" class="feedback-box" hidden></div></div>
+          <aside class="panel interview-guide"><h3>Answering tips</h3><div class="guide-item"><span>01</span><div><strong>Be clear</strong><p>Answer the question directly.</p></div></div><div class="guide-item"><span>02</span><div><strong>Give an example</strong><p>Use a real experience or project.</p></div></div><div class="guide-item"><span>03</span><div><strong>Keep it natural</strong><p>Use simple English you understand.</p></div></div><div class="guide-item"><span>04</span><div><strong>Review and improve</strong><p>Practise again with a stronger answer.</p></div></div></aside>
+        </div>
+      </section>
+
+      <section class="page" id="page-projects">
+        <div class="page-intro"><p class="eyebrow">SHOW WHAT YOU CAN DO</p><h1>My <span class="gradient-text">Projects.</span></h1><p class="subtitle">Collect your ideas and turn your learning into a portfolio.</p></div>
+        <div class="projects-layout">
+          <form id="projectForm" class="panel project-form"><h2>Add a project</h2><p>Describe what you're building or learning.</p><label class="field-label" for="projectName">Project name</label><input id="projectName" class="form-control" maxlength="100" placeholder="e.g. Smart Transportation System" required><label class="field-label" for="projectDescription">Description</label><textarea id="projectDescription" class="form-control" rows="4" maxlength="1000" placeholder="What problem does it solve?" required></textarea><label class="field-label" for="projectSkills">Skills used</label><input id="projectSkills" class="form-control" maxlength="200" placeholder="Python, HTML, AI..."><button class="primary-button" type="submit">+ Add project</button></form>
+          <div class="panel"><div class="panel-heading"><div><h2>Your portfolio</h2><p>Your projects are saved in this browser.</p></div><button id="exportPortfolio" class="secondary-button">Export portfolio</button></div><div id="projectList" class="project-list"></div></div>
+        </div>
+      </section>
+
+      <footer class="app-footer"><span>SkillSprint AI <span class="footer-dot">✦</span></span><span>Learn consistently. Grow confidently.</span><button id="resetData" class="footer-reset">Reset my data</button></footer>
     </main>
   </div>
-  <div id="toast" class="toast" role="status"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
 </html>
-
+ 
