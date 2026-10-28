@@ -500,4 +500,446 @@ body.light-theme .icon-button, body.light-theme .menu-toggle { background: #fff;
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
+/* ==========================================
+   SKILLSPRINT AI — DARK MOCHA & CREAM THEME
+   Theme-only overrides: preserve existing layout
+   ========================================== */
+
+:root {
+  color-scheme: dark;
+
+  --bg: #17110e;
+  --sidebar: #201711;
+  --panel: #2a1e17;
+  --panel2: #35261d;
+  --border: #594332;
+
+  --text: #fff3e3;
+  --muted: #c6ad96;
+
+  --purple: #e2b77f;
+  --pink: #f0d8b7;
+  --blue: #d9b98c;
+  --gold: #f2c98c;
+  --green: #a9c5a0;
+
+  --shadow: 0 14px 38px #08060465;
+}
+
+/* Main page and typography */
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+p,
+small {
+  color: var(--muted);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-color: var(--purple);
+}
+
+/* Sidebar and branding */
+.sidebar {
+  background: linear-gradient(180deg, #241911, #1a120e);
+  border-color: var(--border);
+}
+
+.brand {
+  color: var(--text);
+}
+
+.brand-icon,
+.avatar,
+.coach-avatar {
+  background: linear-gradient(135deg, #e5c49a, #a97b4f);
+  color: #21150e;
+  box-shadow: 0 5px 22px #d0a16c20;
+}
+
+.brand-ai {
+  color: var(--purple);
+}
+
+.sidebar-label,
+.eyebrow {
+  color: #c8a77f;
+}
+
+.nav-link {
+  color: #d4c0aa;
+}
+
+.nav-link:hover {
+  background: #d9b98c12;
+  color: var(--text);
+}
+
+.nav-link.active {
+  background: linear-gradient(100deg, #d8ad7825, #e9d4b00d);
+  border-color: #d8ad7850;
+  color: #ffe4bd;
+}
+
+.nav-tag {
+  color: #f5d8ae;
+  background: #c99a5c26;
+}
+
+.upgrade-card {
+  background:
+    radial-gradient(ellipse at top right, #d5a66a25, transparent 65%),
+    #2b1e15;
+  border-color: #76563a;
+}
+
+.upgrade-icon,
+.text-button,
+.inline-link {
+  color: var(--purple);
+}
+
+/* Top bar and buttons */
+.topbar {
+  border-color: var(--border);
+}
+
+.status-pill,
+.icon-button,
+.menu-toggle {
+  background: #2b1f17;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.status-pill {
+  color: #e2ccb3;
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, #f3d8b0, #c08b56);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.primary-button,
+.send-button {
+  background: linear-gradient(115deg, #e8c79c, #c18b55);
+  color: #24170e;
+  border: 0;
+  box-shadow: 0 5px 20px #b9864c20;
+}
+
+.primary-button:hover,
+.send-button:hover {
+  filter: brightness(1.09);
+}
+
+.secondary-button {
+  background: #35261d;
+  border-color: #654a34;
+  color: #ffecd5;
+}
+
+.secondary-button:hover {
+  background: #463224;
+}
+
+.light-button {
+  background: #f4e5d0;
+  color: #382316;
+}
+
+/* Hero banner */
+.hero-banner {
+  background:
+    radial-gradient(ellipse at 85% 25%, #d5a66a27, transparent 42%),
+    radial-gradient(ellipse at 100% 100%, #f0d8b713, transparent 45%),
+    linear-gradient(115deg, #392719, #251911);
+  border-color: #775638;
+}
+
+.hero-label {
+  color: #f1d1a5;
+}
+
+.hero-copy p {
+  color: #d7c0a7;
+}
+
+.orbit {
+  border-color: #e2bc8745;
+}
+
+.orbit-center {
+  background: linear-gradient(140deg, #f1d7ad, #b8814d);
+  color: #28180e;
+  box-shadow: 0 0 45px #d1a16c30;
+}
+
+.orbit-chip {
+  background: #38271a;
+  border-color: #775438;
+  color: #f6dfc0;
+}
+
+/* Dashboard cards */
+.stat-card,
+.panel {
+  background: var(--panel);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.stat-top {
+  color: #d7c2aa;
+}
+
+.purple,
+.pink,
+.blue,
+.gold {
+  background: #d7b1821b;
+  color: var(--purple);
+}
+
+.progress-track {
+  background: #ffffff12;
+}
+
+.purple-fill {
+  background: linear-gradient(90deg, #b98752, #efd3a7);
+}
+
+.task-item {
+  border-color: #ffffff10;
+}
+
+.task-check {
+  accent-color: #d7ad78;
+}
+
+.task-item.completed .task-content strong {
+  color: #b7a08a;
+}
+
+.day-chip {
+  background: #d5ae7c1c;
+  color: #f0d0a6;
+}
+
+.quick-action {
+  background: var(--panel2);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.quick-action:hover {
+  border-color: #c69a66;
+}
+
+/* Inputs and form controls */
+.form-control,
+.chat-input-row textarea {
+  background: #1d140f;
+  color: var(--text);
+  border-color: #634831;
+}
+
+.form-control::placeholder {
+  color: #a58a71;
+}
+
+select option {
+  background: #2a1e17;
+  color: var(--text);
+}
+
+.field-label {
+  color: #e5ceb2;
+}
+
+.file-input::file-selector-button {
+  background: #493323;
+  color: #fff0dc;
+}
+
+/* Career roadmap cards */
+.roadmap-card {
+  background: var(--panel);
+  border-color: var(--border);
+}
+
+.roadmap-number {
+  background: #d6ad7824;
+  color: #f0c996;
+}
+
+.roadmap-card .roadmap-skills {
+  color: #e1bd8e;
+}
+
+/* Career coach chat */
+.chat-header {
+  border-color: var(--border);
+}
+
+.chat-mode {
+  color: #f3d09c;
+  background: #d6ad781d;
+}
+
+.message-avatar {
+  background: #d6ad7826;
+  color: #edc18a;
+}
+
+.message-bubble {
+  background: #35261d;
+  border-color: #594332;
+}
+
+.user-message .message-bubble {
+  background: #a7794929;
+  border-color: #c2935b65;
+}
+
+.message-bubble p {
+  color: #ead9c7;
+}
+
+.suggestion {
+  background: #2b1f17;
+  color: #e5cdb3;
+  border-color: var(--border);
+}
+
+.suggestion:hover {
+  border-color: #d5aa75;
+}
+
+.chat-input-row {
+  border-color: var(--border);
+}
+
+.coach-tips > button {
+  color: #e3ceb7;
+  border-color: #ffffff12;
+}
+
+.coach-tips > button:hover {
+  color: #edc18a;
+}
+
+.tip-note {
+  background: #d6ad7817;
+}
+
+.tip-note > span {
+  color: #e4b980;
+}
+
+/* Resume analyzer */
+.empty-icon {
+  color: #f0d1a6;
+  background: #d6ad7820;
+}
+
+.score-circle {
+  border-color: #d7ad7860;
+  color: #edc18a;
+}
+
+.report-score,
+.report-section {
+  border-color: var(--border);
+}
+
+.skill-chip {
+  background: #a9c5a018;
+  color: #c4dfb9;
+  border-color: #a9c5a040;
+}
+
+.report-list {
+  color: #dfcbb5;
+}
+
+/* Interview practice */
+.guide-item > span {
+  color: #e6bc85;
+}
+
+.feedback-box {
+  background: #a9c5a012;
+  border-color: #a9c5a050;
+}
+
+.feedback-box p,
+.feedback-box li {
+  color: #d8d8bd;
+}
+
+/* Projects */
+.project-card {
+  background: var(--panel2);
+  border-color: var(--border);
+}
+
+.project-actions button {
+  color: #edc18a;
+}
+
+.project-actions .delete-project,
+.footer-reset:hover {
+  color: #f0a18c;
+}
+
+.project-empty {
+  border-color: #75563b;
+}
+
+/* Footer and notification */
+.app-footer {
+  border-color: var(--border);
+}
+
+.app-footer > span:first-child {
+  color: #f0d7b4;
+}
+
+.footer-dot {
+  color: #d8ad78;
+}
+
+.footer-reset {
+  color: #c3aa91;
+}
+
+.toast {
+  background: #38271b;
+  border-color: #8b6845;
+  color: #fff0dd;
+}
+
+/* Keep the theme readable on small screens */
+@media (max-width: 680px) {
+  .sidebar {
+    background: #241911;
+  }
+}
+
+/* Accessible text selection */
+::selection {
+  background: #d8ad7860;
+  color: #fff8ed;
+}
+
+
 
