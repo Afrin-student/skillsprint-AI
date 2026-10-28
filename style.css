@@ -790,3 +790,139 @@ body.light-theme .menu-toggle {
   background: #fffaf3;
   color: var(--text);
 }
+
+/* ===== HIGH CONTRAST TEXT — DARK MOCHA THEME ===== */
+
+/* Main text: bright white */
+body {
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
+/* All important headings: bold white */
+h1,
+h2,
+h3,
+h4,
+.brand,
+.section-heading h2,
+.panel-heading h2,
+.hero-copy h2,
+.page-intro h1,
+.stat-value,
+.goal-value,
+.task-content strong,
+.project-card h3,
+.interview-question-panel h2,
+.chat-header strong,
+.message-bubble strong,
+.report-score strong,
+.empty-state strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Main hero title: white, not gradient */
+.gradient-text {
+  background: none;
+  -webkit-text-fill-color: #FFFFFF;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Regular descriptions: readable light grey */
+p,
+small,
+.subtitle,
+.breadcrumb,
+.stat-top,
+.stat-note,
+.task-content p,
+.section-heading p,
+.panel-heading p,
+.hero-copy p,
+.project-card p,
+.message-bubble p,
+.report-list,
+.interview-question-panel > p {
+  color: #D6D6D6;
+}
+
+/* Labels: warm gold for contrast */
+.eyebrow,
+.sidebar-label,
+.field-label,
+.hero-label {
+  color: #E6BD89;
+  font-weight: 700;
+}
+
+/* Navigation */
+.nav-link {
+  color: #E8E8E8;
+  font-weight: 600;
+}
+
+.nav-link.active {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Buttons */
+.primary-button,
+.secondary-button,
+.light-button,
+.send-button {
+  font-weight: 700;
+}
+
+/* Input text */
+.form-control,
+.chat-input-row textarea {
+  color: #FFFFFF;
+}
+
+.form-control::placeholder {
+  color: #BDBDBD;
+}
+
+/* Project and chat text */
+.message-bubble,
+.project-card {
+  color: #FFFFFF;
+}
+
+.skill-chip {
+  font-weight: 600;
+}
+
+/* Keep the text readable in light mode too */
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme .brand,
+body.light-theme .section-heading h2,
+body.light-theme .panel-heading h2,
+body.light-theme .hero-copy h2,
+body.light-theme .page-intro h1,
+body.light-theme .stat-value,
+body.light-theme .goal-value {
+  color: #24180F;
+}
+
+body.light-theme .gradient-text {
+  color: #24180F;
+  -webkit-text-fill-color: #24180F;
+}
+
+body.light-theme p,
+body.light-theme small {
+  color: #5B4939;
+}
+
+body.light-theme .form-control,
+body.light-theme .chat-input-row textarea {
+  color: #24180F;
+}
+
